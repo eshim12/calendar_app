@@ -16,8 +16,8 @@ export default [
   {
     id: 2,
     title: 'DTS STARTS',
-    start: new Date(2018, 5, 13, 0, 0, 0),
-    end: new Date(2018, 5, 20, 0, 0, 0),
+    start: new Date(2018, 5, 13, 1, 0, 0),
+    end: new Date(2018, 5, 14, 2, 0, 0),
   },
 
   {
@@ -30,8 +30,8 @@ export default [
   {
     id: 4,
     title: 'Some Event',
-    start: new Date(2018, 5, 9, 0, 0, 0),
-    end: new Date(2018, 5, 9, 0, 0, 0),
+    start: new Date(2018, 5, 9, 12, 12, 0),
+    end: new Date(2018, 5, 9, 13, 0, 0),
   },
   {
     id: 5,

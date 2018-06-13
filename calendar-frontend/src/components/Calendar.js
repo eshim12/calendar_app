@@ -22,11 +22,10 @@ class Calendar extends Component {
   }
 
   onSubmit = (title, start, end) => {
-    e.preventDefault()
     const newEvent = {
-      title: e.title,
-      start: new Date(e.start,
-      end: e.end
+      title: title,
+      start: start,
+      end: end
     }
     this.setState({
       events: [...this.state, newEvent]

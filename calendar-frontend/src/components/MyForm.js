@@ -38,8 +38,12 @@ class MyForm extends Component {
   }
 
   onSubmit = (e) => {
-    preventDefault()
-    const start = new Date(e.start)
+    e.preventDefault()
+    const start = new Date(this.state.startD)
+    const end = new Date(this.state.endD.split("-").join(","))
+    const title = this.state.title
+
+    this.props.onSubmit(title, start, end)
   }
 
   handleChange = (e) => {
@@ -57,15 +61,15 @@ class MyForm extends Component {
         <Popup trigger={this.triggerElement} on='click'>
           <Form>
             <Form.Field>
-              <input placeholder='event title' name='event' onChange={this.handleChange}/>
+              <input placeholder='event title' name='title' onChange={this.handleChange}/>
             </Form.Field>
             <Form.Field>
-              <input placeholder={this.props.start} name='startTime'/>
+              <input placeholder={this.props.start} name='startT'/>
             </Form.Field>
             <Form.Select fluid label='hour' options={this.rangeHours}/>
             <Form.Select fluid label='minute' options={this.rangeMinutes}/>
             <Form.Field>
-              <input placeholder='end date' name='endTime'/>
+              <input placeholder='end date YYYY-MM-DD' name='endT'/>
             </Form.Field>
             <Form.Select fluid label='hour' options={this.rangeHours}/>
             <Form.Select fluid label='minute' options={this.rangeMinutes}/>
