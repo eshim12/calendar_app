@@ -38,9 +38,6 @@ class Calendar extends Component {
   }
 
   handleSelectEvent = (e) => {
-    this.setState({
-
-    })
     console.log("the event", new Date(e.start));
     alert(`event: ${e.title}, start: ${e.start}, end: ${e.end}`)
     return (<EventPopup title={e.title}/>)
