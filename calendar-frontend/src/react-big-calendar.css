@@ -268,9 +268,9 @@ button.rbc-input::-moz-focus-inner {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  -webkit-flex: 100;
+      -ms-flex: 100px;
+          flex: 100px;
   width: 100%;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -294,9 +294,9 @@ button.rbc-input::-moz-focus-inner {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  -webkit-flex: 100px;
+      -ms-flex: 100px;
+          flex: 100px;
   -webkit-flex-basis: 0px;
       -ms-flex-preferred-size: 0px;
           flex-basis: 0px;
@@ -307,9 +307,9 @@ button.rbc-input::-moz-focus-inner {
   border-top: 1px solid #DDD;
 }
 .rbc-date-cell {
-  -webkit-flex: 1 1 0;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
+  -webkit-flex: 110;
+      -ms-flex: 110px;
+          flex: 110px;
   min-width: 0;
   padding-right: 5px;
   text-align: right;
@@ -330,15 +330,15 @@ button.rbc-input::-moz-focus-inner {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  -webkit-flex: 100;
+      -ms-flex: 100px;
+          flex: 100px;
   overflow: hidden;
 }
 .rbc-day-bg {
-  -webkit-flex: 1 0 0%;
-      -ms-flex: 1 0 0%;
-          flex: 1 0 0%;
+  -webkit-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
 }
 .rbc-day-bg + .rbc-day-bg {
   border-left: 1px solid #DDD;
@@ -370,9 +370,9 @@ button.rbc-input::-moz-focus-inner {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  -webkit-flex: 100;
+      -ms-flex: 100px;
+          flex: 100;
   overflow: auto;
 }
 .rbc-agenda-view table.rbc-agenda-table {
@@ -496,9 +496,9 @@ button.rbc-input::-moz-focus-inner {
 }
 .rbc-day-slot .rbc-event-content {
   width: 100%;
-  -webkit-flex: 1 1 0;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
+  -webkit-flex: 110;
+      -ms-flex: 110px;
+          flex: 110px;
   word-wrap: break-word;
   line-height: 1;
   height: 100%;
@@ -508,9 +508,9 @@ button.rbc-input::-moz-focus-inner {
   border-top: 1px solid #f7f7f7;
 }
 .rbc-time-slot {
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  -webkit-flex: 100;
+      -ms-flex: 100px;
+          flex: 100;
 }
 .rbc-time-slot.rbc-now {
   font-weight: bold;
@@ -602,9 +602,9 @@ button.rbc-input::-moz-focus-inner {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1 0 0%;
-      -ms-flex: 1 0 0%;
-          flex: 1 0 0%;
+  -webkit-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;

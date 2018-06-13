@@ -7,16 +7,31 @@ import '../react-big-calendar.css'
 BigCalendar.momentLocalizer(moment);
 // let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k])
 let today = new Date ()
-const Calendar = (props) => (
 
-  <div>
-    <BigCalendar
-      events={[]}
-      startAccessor='startDate'
-      endAccessor='endDate'
-    />
-  </div>
+class Calendar extends Component {
+  constructor(props) {
+    super(props);
 
-)
+    this.state = {
+      events: [...events]
+    }
+  }
+
+  render() {
+    console.log(this.state.events);
+    return(
+      <div>
+        <BigCalendar
+          selectable
+          events={events}
+
+          startAccessor='startDate'
+          endAccessor='endDate'
+        />
+      </div>
+    )
+  }
+}
+
 
 export default Calendar
