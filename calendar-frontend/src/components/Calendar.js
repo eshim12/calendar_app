@@ -16,15 +16,16 @@ class Calendar extends Component {
     super(props);
 
     this.state = {
-      events: [...events]
+      events: [...events],
+      title: ""
     }
   }
 
-  onSubmit = (e) => {
+  onSubmit = (title, start, end) => {
+    e.preventDefault()
     const newEvent = {
       title: e.title,
-      allDay: true,
-      start: e.start,
+      start: new Date(e.start,
       end: e.end
     }
     this.setState({
@@ -38,9 +39,12 @@ class Calendar extends Component {
   }
 
   handleSelectEvent = (e) => {
-    console.log(new Date(e.start));
+    this.setState({
+
+    })
+    console.log("the event", new Date(e.start));
     alert(`event: ${e.title}, start: ${e.start}, end: ${e.end}`)
-    return (<EventPopup start={e.start}/>)
+    return (<EventPopup title={e.title}/>)
   }
 
   render() {
@@ -56,6 +60,7 @@ class Calendar extends Component {
           startAccessor='start'
           endAccessor='end'
         />
+
       </div>
     )
   }

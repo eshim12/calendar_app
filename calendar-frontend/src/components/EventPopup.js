@@ -6,11 +6,17 @@ class EventPopup extends Component {
     super(props);
   }
 
+  triggerElement = (prop) => {
+    const element = document.getElementsByClassName("rbc-event-content")
+    return element.find(i => (i.title === prop))
+  }
+
   render() {
     console.log(this.props);
+
     return (
       <div>
-        <Popup content={this.props.start}/>
+        <Popup trigger={this.triggerElement(this.props.title)} content='open'/>
       </div>
     )
   }
