@@ -3,6 +3,8 @@ import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import events from '../events'
 import '../react-big-calendar.css'
+import MyForm from './MyForm'
+import EventPopup from './EventPopup'
 import {Popup, Button} from 'semantic-ui-react'
 
 BigCalendar.momentLocalizer(moment);
@@ -18,9 +20,28 @@ class Calendar extends Component {
     }
   }
 
-  eventPopup = (e) => (
-    <Popup trigger={<Button icon='heart'/>} on='click' content='clicked!'/>
-  )
+  onSubmit = (e) => {
+    const newEvent = {
+      title: e.title,
+      allDay: true,
+      start: e.start,
+      end: e.end
+    }
+    this.setState({
+      events: [...this.state, newEvent]
+    })
+  }
+
+  handleNewEvent = (e) => {
+    console.log(e);
+    return (<MyForm title={e.title} start={e.start} end={e.end} />)
+  }
+
+  handleSelectEvent = (e) => {
+    console.log(new Date(e.start));
+    alert(`event: ${e.title}, start: ${e.start}, end: ${e.end}`)
+    return (<EventPopup start={e.start}/>)
+  }
 
   render() {
     console.log(this.state.events);
@@ -28,10 +49,12 @@ class Calendar extends Component {
       <div>
         <BigCalendar
           selectable
+          defaultView='week'
           events={this.state.events}
-          onSelectSlot={this.eventPopup}
-          startAccessor='startDate'
-          endAccessor='endDate'
+          onSelectSlot={this.handleNewEvent}
+          onSelectEvent={this.handleSelectEvent}
+          startAccessor='start'
+          endAccessor='end'
         />
       </div>
     )
