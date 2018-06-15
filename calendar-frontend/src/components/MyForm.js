@@ -32,9 +32,9 @@ class MyForm extends Component {
     return arr
   }
 
-  triggerElement = (prop) => {
+  triggerElement = () => {
     const element = document.getElementsByClassName("rbc-event-content")
-    return element.find(i => (i.title === prop))
+    return element.find(i => (i.title === this.title))
   }
 
   onSubmit = (e) => {
@@ -53,7 +53,7 @@ class MyForm extends Component {
   }
 
   render() {
-    console.log("inform");
+    console.log("in form");
 
 
     return(
