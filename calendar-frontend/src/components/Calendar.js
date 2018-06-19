@@ -17,9 +17,16 @@ class Calendar extends Component {
 
     this.state = {
       events: [...events],
-      title: ""
+      title: "",
+      form: true,
+      display: "none"
     }
   }
+
+  // componentDidMount = () => {
+  //   const day = document.querySelector(".rbc-day-bg")
+  //   day.ondblclick = () => {console.log("clicked")}
+  // }
 
   onSubmit = (title, start, end) => {
     const newEvent = {
@@ -33,28 +40,39 @@ class Calendar extends Component {
   }
 
   handleNewEvent = (e) => {
-    console.log(e);
+    console.log(e.slots);
     const img = (<div><p>HELLO</p></div>)
+
+    e.action === "doubleClick" ? ReactDOM.render(img, document.getElementById('root')) : null
     const myForm = (<MyForm title={e.title} start={e.start} end={e.end} />)
-    ReactDOM.render(img, document.getElementById('root'))
+
   }
 
-  handleSelectEvent = (e) => {
-    console.log("the event", new Date(e.start));
+  showForm = () => {
 
-    alert(`event: ${e.title}, start: ${e.start}, end: ${e.end}`)
-    return (<EventPopup title={e.title}/>)
+  }
+
+  handleSelectEvent = (event, e) => {
+    console.log(event, e);
+    // const evnt = [...document.getElementsByClassName("rbc-event-content")]
+    // const trigger = evnt.find(x => (x.title === e.title))
+    // const ePopup = <EventPopup title={e.title}/>
+    // const test = (<p>HELLO</p>)
+    // ReactDOM.render(test, trigger)
   }
 
   render() {
     console.log(this.state.events);
     console.log("date", moment('2016-2-13').format());
+
     return(
       <div>
         <BigCalendar
           style={{height: '420px'}}
           events={this.state.events}
-          onSelectSlot={slot => this.handleNewEvent(slot)}
+          selectable={true}
+          onSelectSlot={(slot)=>this.handleNewEvent(slot)}
+          onSelectEvent={(event, e) => this.handleSelectEvent(event, e)}
         />
       </div>
     )

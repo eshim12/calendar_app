@@ -7,7 +7,7 @@ class EventPopup extends Component {
   }
 
   triggerElement = (prop) => {
-    const element = document.getElementsByClassName("rbc-event-content")
+    const element = [...document.getElementsByClassName("rbc-event-content")]
     return element.find(i => (i.title === prop))
   }
 
