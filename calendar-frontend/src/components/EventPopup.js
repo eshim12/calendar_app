@@ -1,25 +1,15 @@
 import React, {Component} from 'react';
 import {Popup} from 'semantic-ui-react'
 
-class EventPopup extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  triggerElement = (prop) => {
-    const element = [...document.getElementsByClassName("rbc-event-content")]
-    return element.find(i => (i.title === prop))
-  }
-
-  render() {
-    console.log(this.props);
-
-    return (
-      <div>
-        <Popup trigger={this.triggerElement(this.props.title)} content='open'/>
-      </div>
-    )
-  }
+const triggerElement = (prop) => {
+  const element = [...document.getElementsByClassName("rbc-event-content")]
+  return element.find(i => (i.title === prop))
 }
 
-export default Popup
+const EventPopup = (props) => (
+  <div>
+    <Popup trigger={triggerElement(props.title)} content='open' />
+  </div>
+)
+
+export default EventPopup

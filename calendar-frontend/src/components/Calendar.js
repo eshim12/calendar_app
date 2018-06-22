@@ -53,7 +53,7 @@ class Calendar extends Component {
   }
 
   handleSelectEvent = (event, e) => {
-    console.log(event, e);
+    console.log("event", event,"e", e);
     // const evnt = [...document.getElementsByClassName("rbc-event-content")]
     // const trigger = evnt.find(x => (x.title === e.title))
     // const ePopup = <EventPopup title={e.title}/>
