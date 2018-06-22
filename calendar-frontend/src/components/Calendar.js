@@ -41,10 +41,30 @@ class Calendar extends Component {
 
   handleNewEvent = (e) => {
     console.log(e.slots);
-    const img = (<div><p>HELLO</p></div>)
+    // const img = (<div><p>HELLO</p></div>)
+    //
+    // e.action === "doubleClick" ? ReactDOM.render(img, document.getElementById('root')) : null
+    // const myForm = (<MyForm title={e.title} start={e.start} end={e.end} />)
 
-    e.action === "doubleClick" ? ReactDOM.render(img, document.getElementById('root')) : null
-    const myForm = (<MyForm title={e.title} start={e.start} end={e.end} />)
+    if (e.action === "doubleClick") {
+      const newEvnt = prompt("Enter event title:", "title")
+      let date = ""
+
+      if (newEvnt != null) {
+        date = prompt("Enter end date", "MM-DD-YYYY")
+        document.getElementById("root").innerHTML = `Your new event is titled: ${newEvnt}`
+
+        const add = {
+          title: newEvnt,
+          start: moment(e.slots[0]).format()
+        }
+      }
+    }
+
+
+    // this.setState({
+    //   events: [...this.state.events, add]
+    // })
 
   }
 
