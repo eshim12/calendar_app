@@ -22,12 +22,12 @@ export default [
     end: moment('2018-6-11').format(),
   },
 
-  // {
-  //   id: 3,
-  //   title: 'DTS ENDS',
-  //   start: moment('2018-6-6').format(),
-  //   end: moment('2018-6-13').format(),
-  // },
+  {
+    id: 3,
+    title: 'DTS ENDS',
+    start: moment('2018-6-6').format(),
+    end: moment('2018-6-13').format(),
+  },
 
   // {
   //   id: 4,

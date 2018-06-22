@@ -68,6 +68,7 @@ class Calendar extends Component {
     return(
       <div>
         <BigCalendar
+          showMultiDayTimes={true}
           style={{height: '420px'}}
           events={this.state.events}
           selectable={true}
